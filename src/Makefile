@@ -1,6 +1,7 @@
 #CFLAGS = -Wall -D_DEBUG -g
 #CFLAGS = -Wall 
-LDFLAGS = -lncurses
+LOADLIBES = -lncurses
+LDFLAGS   = -lncurses
 
 pacman: pacman.o player.o ghosts.o pills.o render.o board.o gameloop.o 
 pacman.o: pacman.h render.h gameloop.h
