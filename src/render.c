@@ -1,5 +1,5 @@
 
-#include <ncurses.h>
+#include <ncurses/ncurses.h>
 #include <unistd.h>
 #include <string.h>
 #include "pacman.h"

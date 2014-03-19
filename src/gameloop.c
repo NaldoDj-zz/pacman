@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <string.h>
-#include <ncurses.h>		/* we still use the getch */
+#include <ncurses/ncurses.h>		/* we still use the getch */
 #include "pacman.h"
 #include "gameloop.h"
 #include "player.h"
