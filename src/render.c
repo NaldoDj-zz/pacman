@@ -9,9 +9,9 @@
 #define PC_PACMAN		1
 #define PC_WALL			2
 #define PC_PILL			3
-#define PC_POWERPILL		4
+#define PC_POWERPILL	4
 #define PC_WHITE		5	/* anything we don't understand */
-#define PC_EDIBLE_GHOST		6
+#define PC_EDIBLE_GHOST	6
 #define PC_GHOST		20
 
 void *Pac_InitRender(void)
@@ -123,7 +123,7 @@ int c;
 		{
 		case	PACKEY_LEFT:	c=0; break;
 		case	PACKEY_RIGHT:	c=1; break;
-		case	PACKEY_UP:	c=2; break;
+		case	PACKEY_UP:      c=2; break;
 		case	PACKEY_DOWN:	c=3; break;
 		}
 	attron(A_BOLD);
@@ -224,8 +224,12 @@ char *szAnim = "|Vv_.+*X*+. ";
 
 void Pac_RenderGameInfo(void *pCtx)
 {
-char *s1 = "ASCII Pacman - Steven Goodwin 2002";
-char *s2 = "Released under the GPL";
+	char *s1 = "ASCII Pacman - Steven Goodwin 2002";
+	char *s2 = "Released under the GPL";
+	char *s3 = "  [ KEY_UP    ]";
+	char *s4 = "  [ KEY_DOWN  ]";
+	char *s5 = "  [ KEY_LEFT  ]";
+	char *s6 = "  [ KEY_RIGHT ]";
 
 	clear();
 	attron(COLOR_PAIR(PC_PILL));
@@ -233,6 +237,13 @@ char *s2 = "Released under the GPL";
 	attroff(COLOR_PAIR(PC_PILL));
 	attron(COLOR_PAIR(PC_PACMAN));
 	mvprintw(3,CenteredX(s2), s2);
+	attroff(COLOR_PAIR(PC_PACMAN));
+	attron(COLOR_PAIR(PC_PILL));
+	mvprintw(20,CenteredX(s3), s3);
+	mvprintw(21,CenteredX(s4), s4);
+	mvprintw(22,CenteredX(s5), s5);
+	mvprintw(23,CenteredX(s6), s6);
+	attron(COLOR_PAIR(PC_PILL));
 	attroff(COLOR_PAIR(PC_PACMAN));
 }
 

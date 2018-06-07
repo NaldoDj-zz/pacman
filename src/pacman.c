@@ -6,6 +6,7 @@
 #include "pacman.h"
 #include "render.h"
 #include "gameloop.h"
+#include <ncurses/ncurses.h>		/* we still use the getch */
 
 void GetMarqueeText(GAME_STATE *ptr)
 {
@@ -37,6 +38,12 @@ int main(int argc, char **argv)
 {
 GAME_STATE game; 
 void *pRender;
+
+    /* Curses Initialisations */
+    initscr();
+    raw();
+    keypad(stdscr, TRUE);
+    noecho();
 
 	game.iHighScore = 9710;
 	GetMarqueeText(&game);

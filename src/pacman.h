@@ -2,6 +2,8 @@
 #define _PACMAN_H
 
 #include <stdlib.h>
+#include <ncurses/ncurses.h>		/* we still use the getch */
+
 
 /* 
 ** Curses already defines these, but if we ever change the renderer
@@ -21,10 +23,10 @@
 #define MAX_PACMAN_LIVES	6
 
 /* curses already have KEY_UP, so we prefix with PAC */
-#define PACKEY_UP		'k'
-#define PACKEY_DOWN		'm'
-#define PACKEY_LEFT		'x'
-#define PACKEY_RIGHT		'c'
+#define PACKEY_UP		KEY_UP
+#define PACKEY_DOWN		KEY_DOWN
+#define PACKEY_LEFT		KEY_LEFT
+#define PACKEY_RIGHT	KEY_RIGHT
 
 #define RND(__x)	(int)((double)rand()/((double)RAND_MAX+1)*__x)
 
